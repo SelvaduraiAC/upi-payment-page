@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UPI Payment</title>
+
+<script>
+
+const params=new URLSearchParams(window.location.search);
+
+const pa=params.get("pa");
+const pn=params.get("pn");
+const am=params.get("am");
+const tn=params.get("tn");
+
+const upi=`upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR&tn=${tn}`;
+
+window.onload=function(){
+
+window.location.href=upi;
+
+setTimeout(function(){
+
+document.getElementById("pay").href=upi;
+
+},1500);
+
+};
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Opening your UPI App...</h2>
+
+<p>If nothing happens click below.</p>
+
+<a id="pay">Open UPI App</a>
+
+</body>
+</html>
